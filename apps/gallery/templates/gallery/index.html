@@ -1,0 +1,13 @@
+<h1>Images</h1>
+<table>
+    {% for image in object_list %}
+    <tr>
+        <td>{{ image.name }}</td>
+        <td><a href="{% url 'gallery:image_edit' image.pk %}">edit</a></td>
+        <td><a href="{% url 'gallery:image_delete' image.pk %}">delete</a></td>
+        <td><img src="{{ image.image.url }}"  /></td>
+    </tr>
+    {% endfor %}
+</table>
+
+<a href="{% url 'gallery:image_new' %}">New</a>
