@@ -15,7 +15,7 @@ Run migrate command to create the database, then run the development server:
 You can access the gallery application on the following URL: [http://localhost:8000/](http://localhost:8000/)
 
 
-## Galelry application
+## Gallery application
 Most of the code exists under "apps/gallery", including the model, views, url routing (urls.py), and templates.
 
 
