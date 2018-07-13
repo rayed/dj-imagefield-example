@@ -1,10 +1,12 @@
-from django.conf.urls import patterns, url
+from django.urls import path
 
-from gallery import views
+from . import views
 
-urlpatterns = patterns('',
-  url(r'^$', views.index, name='home'),
-  url(r'^new/$', views.image_create, name='image_new'),
-  url(r'^edit/(?P<pk>\d+)$', views.image_update, name='image_edit'),
-  url(r'^delete/(?P<pk>\d+)$', views.image_delete, name='image_delete'),
-)
+app_name = "gallery"
+
+urlpatterns = [
+  path('', views.index, name='home'),
+  path('new/', views.image_create, name='image_new'),
+  path('edit/<int:pk>', views.image_update, name='image_edit'),
+  path('delete/<int:pk>', views.image_delete, name='image_delete'),
+]
