@@ -1,14 +1,14 @@
 # ImageField Sample Application 
 
-This an implemention of a tiny image gallery site with single Django application "gallery".
+This an implementation of a tiny image gallery site with single Django application "gallery".
 
 It is meant as an example for my blog post:
 [Django Image and File Field Caveats](https://rayed.com/posts/2015/04/django-image-and-file-field-caveats/)
 
 ## Setup and Run
 
-    python3 -m venv my_env           # Create new virtual environment
-    source my_env/bin/activate       # Activate the new environment
+    python3 -m venv venv             # Create new virtual environment
+    . venv/bin/activate              # Activate the new environment
     pip install -r requirements.txt  # Install required packages
     cd apps
     ./manage.py migrate              # Create DB tables
