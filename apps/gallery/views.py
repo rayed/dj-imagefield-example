@@ -1,7 +1,7 @@
 from django.shortcuts import render,redirect,get_object_or_404
-
 from django.forms import ModelForm
-from gallery.models import Image
+
+from .models import Image
 
 class ImageForm(ModelForm):
     class Meta:
@@ -10,10 +10,10 @@ class ImageForm(ModelForm):
 
 def index(request, template_name='gallery/index.html'):
     images = Image.objects.all()
-    data = {}
-    data['object_list'] = images
+    data = {
+        'object_list': images,
+    }
     return render(request, template_name, data)
-
 
 def image_create(request, template_name='gallery/form.html'):
     form = ImageForm(request.POST or None, request.FILES or None)
